@@ -18,10 +18,12 @@ from django.urls import include, path
 from django.conf.urls import url
 from django.conf import settings
 from django.conf.urls.static import static
+from companies import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^music/', include('music.urls')),
+    url(r'^stocks/', views.StockList.as_view()),
 ]
 
 if settings.DEBUG:
